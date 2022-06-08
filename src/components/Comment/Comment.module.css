@@ -1,10 +1,10 @@
-.comment {
+.Comment {
     margin-top: 1.5rem;
     display: flex;
     gap: 1rem;
 }
 
-.comment > img {
+.Comment > img {
      width: 3rem;
      height: 3rem;
      border-radius: 8px;
@@ -12,6 +12,7 @@
 
 .commentBox {
     flex: 1;
+    
 }
 
 .commentContent  {
@@ -56,12 +57,13 @@
 }
 
 .commentContent p {
-    margin-top: : 1rem;
+    margin-top: 1rem;
     color: var(--gray-300);
 }
 
-.commentBox footer {
-    margin-top: 1rem
+
+.commentBox > footer {
+    margin-top: 0.5rem;
 }
 
 .commentBox footer button {
