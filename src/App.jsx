@@ -8,6 +8,43 @@ import { Post } from './components/Post'
 
 function App() {
 
+  // author { avatar_url: '', name: '', role: '' }[
+  // publishedAt: date
+  // content
+  const posts = [
+    {
+      id: 1,
+      author: {
+        avatar: 'https://github.com/itslucassouza.png',
+        namne: 'Lucas Souza',
+        role: 'Dev front-end'
+      },
+      content: [
+        {type: 'paragraph', content: 'Fala Galera'},
+        {type: 'paragraph', content: 'acabei de subir tananan'},
+        {type: 'link', content: 'jane.design/doctorcare'}
+
+      ],
+      publishedAt: new Date("2022-05-03 20:00:00"),
+    },
+    {
+      id: 2,
+      author: {
+        avatar: 'https://github.com/diego3g.png',
+        namne: 'DiegoFernandes',
+        role: 'Dev front-end'
+      },
+      content: [
+        {type: 'paragraph', content: 'Fala Galera'},
+        {type: 'paragraph', content: 'acabei de subir tananan'},
+        {type: 'link', content: 'jane.design/doctorcare'}
+
+      ],
+      publishedAt: new Date("2022-05-03 20:00:00"),
+    },
+  ];
+  
+
   return (
     <>
       <Header />
@@ -15,15 +52,16 @@ function App() {
         <Sidebar />
         <main>
 
-        <Post author="Lucas Souza" content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis beatae tempora eum consequatur quia quam repellendus blanditiis, sequi odit quod esse. Obcaecati eligendi sapiente quam commodi debitis, blanditiis magni iste?"
-/>
+          {posts.map((post) => {
+            <Post 
+            author={post.author}
+            content={post.content}
+            publishedAt={post.publishedAt}
+            />
+          })}
 
-
-
-        <Post author="Lucas Souza" content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis beatae tempora eum consequatur quia quam repellendus blanditiis, sequi odit quod esse. Obcaecati eligendi sapiente quam commodi debitis, blanditiis magni iste?"
-                />
-
-                </main>
+        
+        </main>
 
       </div>
     </>
