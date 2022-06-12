@@ -6,6 +6,7 @@ import styles from './App.module.css'
 import { Sidebar } from './components/Sidebar'
 import { Post } from './components/Post'
 
+
 function App() {
 
   // author { avatar_url: '', name: '', role: '' }[
@@ -16,7 +17,7 @@ function App() {
       id: 1,
       author: {
         avatar: 'https://github.com/itslucassouza.png',
-        namne: 'Lucas Souza',
+        name: 'Lucas Souza',
         role: 'Dev front-end'
       },
       content: [
@@ -31,7 +32,7 @@ function App() {
       id: 2,
       author: {
         avatar: 'https://github.com/diego3g.png',
-        namne: 'DiegoFernandes',
+        name: 'DiegoFernandes',
         role: 'Dev front-end'
       },
       content: [
@@ -44,6 +45,7 @@ function App() {
     },
   ];
   
+  console.log(posts)
 
   return (
     <>
@@ -51,8 +53,7 @@ function App() {
       <div className={styles.wrapper}>
         <Sidebar />
         <main>
-
-          {posts.map((post) => {
+          {posts && posts?.map((post) => {
             <Post 
             author={post.author}
             content={post.content}
